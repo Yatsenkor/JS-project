@@ -109,6 +109,7 @@ function calc() {
     getDynamicInformation('#age');
 }
 
+module.exports = calc;
  
  // Ease slider
 // showSlide(slideIndex);
