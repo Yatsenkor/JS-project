@@ -1,11 +1,11 @@
   //tabs
-  function tabs (){
-      const tabs = document.querySelectorAll('.tabheader__item');
+  function tabs (tabsSelector, tabsContentSelector, tabsParantSelector, activeClass){
+      const tabs = document.querySelectorAll(tabsSelector);
 
-  const tabsParant = document.querySelector('.tabheader__items');
+  const tabsParant = document.querySelector(tabsContentSelector);
  
 
-  const tabsContent = document.querySelectorAll ('.tabcontent');
+  const tabsContent = document.querySelectorAll (tabsParantSelector);
 
   function hideTabContent () {
       tabsContent.forEach(item => {
@@ -13,13 +13,13 @@
       });
 
       tabs.forEach (item => {
-          item.classList.remove('tabheader__item_active');
+          item.classList.remove(activeClass);
       });
   }
 
   function showTabsContent (i = 0) {
       tabsContent[i].style.display = 'block';
-      tabs[i].classList.add('tabheader__item_active');
+      tabs[i].classList.add(activeClass);
   }
   
   hideTabContent ();
@@ -29,7 +29,7 @@
   tabsParant.addEventListener( 'click', (event) =>{
       const target = event.target;
 
-      if (target && event.target.classList.contains('tabheader__item')){
+      if (target && event.target.classList.contains(tabsSelector.slice(1))){
           console.log('click')
           tabs.forEach((item, i) => {
               if (target == item){
@@ -39,5 +39,6 @@
           });
       }
   });
-  }
-  module.exports  = tabs;
+  };
+
+  export default tabs;

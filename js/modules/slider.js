@@ -1,5 +1,3 @@
-
-    // Slider
 function slider(){
     const slides = document.querySelectorAll('.offer__slide'),
           slider = document.querySelector('.offer__slider'),
@@ -153,5 +151,6 @@ function slider(){
                     dots[slideIndex-1].style.opacity = 1;
                 });
         });
-}
-module.exports  = slider;
+};
+
+export default slider;

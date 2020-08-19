@@ -1,4 +1,6 @@
 // Используем классы для карточек
+import { getResource } from "../services/services";
+
 function cards (){
     class MenuItem {
     constructor (src, alt, title, descr, price, parent, ...classes) {
@@ -41,14 +43,5 @@ function cards (){
 
     }
 } 
-
-
-
-getResource('http://localhost:3000/menu')
-.then(data =>{
-    data.forEach(({ img, altimg, title, descr, price}) =>{
-        new MenuItem(img, altimg, title, descr, price, ".menu .container").rendet();
-    });
-});
 }
-module.exports  = cards;
+export default cards;

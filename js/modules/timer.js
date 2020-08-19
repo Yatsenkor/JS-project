@@ -54,5 +54,5 @@
 
  setClock('.timer', deadline);
 
- }
- module.exports  = timer;
+ };
+ export default timer;
